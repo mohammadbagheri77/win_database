@@ -51,6 +51,11 @@
     <Compile Include="class_get_move.cs" />
     <Compile Include="class_move.cs" />
     <Compile Include="ComboboxObjects.cs" />
+    <Compile Include="first_dvDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>first_dvDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +97,17 @@
     </Compile>
     <None Include="DB.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="first_dvDataSet.xsc">
+      <DependentUpon>first_dvDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="first_dvDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>first_dvDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="first_dvDataSet.xss">
+      <DependentUpon>first_dvDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

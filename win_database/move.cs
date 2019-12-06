@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace win_database
 {
@@ -53,8 +55,12 @@ namespace win_database
 
         private void Btn_go_Click(object sender, EventArgs e)
         {
-            var url =$" {((ComboboxObjects)(com_box.SelectedItem)).Value}";
+           string url =$"{((ComboboxObjects)com_box.SelectedItem).Value}";
+            web.ScriptErrorsSuppressed = true;
             web.Navigate(url);
+
         }
+        
+
     }
 }
