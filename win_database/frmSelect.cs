@@ -25,7 +25,7 @@ namespace win_database
             cbo.Value = "tblJobPosition";
             ComboboxObjects cbo2 = new ComboboxObjects();
             cbo2.Text = "کاربر ها";
-            cbo2.Value = "tblFirstLoad";
+            cbo2.Value = "tblFirstLoad1";
             cmbTables.Items.Add(cbo);
             cmbTables.Items.Add(cbo2);
             cmbTables.SelectedIndex = 0;
@@ -37,6 +37,7 @@ namespace win_database
             DataTable dt = db.Select($"Select * From {((ComboboxObjects)(cmbTables.SelectedItem)).Value}");
             db.DC();
             frm1Obj.dgv_MainDataTable.DataSource = dt;
+            frm1Obj.tblName = ((ComboboxObjects)(cmbTables.SelectedItem)).Value.ToString();
             this.Hide();
         }
     }

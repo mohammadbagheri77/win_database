@@ -17,7 +17,7 @@ namespace win_database
         {
             InitializeComponent();
         }
-
+         public string tblName { get; set; }
         private void Btn_move_MouseEnter(object sender, EventArgs e)
         {
             ((Button)sender).BackColor = Color.Gray;
@@ -47,10 +47,38 @@ namespace win_database
         private void Form1_Load(object sender, EventArgs e)
         {
             PDBC dbObj = new PDBC();
+            tblName = "tblFirstLoad1";
             dbObj.Connect();
-            DataTable dt = dbObj.Select("SELECT [id],[Name],[LastName] FROM [tblFirstLoad]");
+            DataTable dt = dbObj.Select("SELECT [id],[Name],[LastName] FROM [tblFirstLoad1]");
             dbObj.DC();
-            
+            dgv_MainDataTable.DataSource = dt;
+        }
+
+        private void Btn_sert_Click(object sender, EventArgs e)
+        {
+            frmInsert fr = new frmInsert(tblName);
+            fr.ShowDialog();
+        }
+
+        private void Dgv_MainDataTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = e.RowIndex;
+            int j = e.ColumnIndex;
+
+            frmUpdat fr;
+            if (dgv_MainDataTable.Columns[j].HeaderText.ToString().ToLower().Contains("id"))
+            {
+                fr = new frmUpdat(tblName, dgv_MainDataTable.Columns[j].HeaderText, dgv_MainDataTable.Rows[i].Cells[j].Value.ToString(), $"id={dgv_MainDataTable.Rows[i].Cells[j].Value.ToString()}", true);
+            }
+            else
+            {
+                fr = new frmUpdat(tblName, dgv_MainDataTable.Columns[j].HeaderText, dgv_MainDataTable.Rows[i].Cells[j].Value.ToString(), $" {dgv_MainDataTable.Columns[j].HeaderText} = '{dgv_MainDataTable.Rows[i].Cells[j].Value.ToString()}'", false);
+            }
+            fr.ShowDialog();
+            PDBC dbObj = new PDBC();
+            dbObj.Connect();
+            DataTable dt = dbObj.Select($"SELECT * FROM [{tblName}]");
+            dbObj.DC();
             dgv_MainDataTable.DataSource = dt;
         }
     }

@@ -55,7 +55,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 450F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 450F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(694, 421);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dgv_MainDataTable
@@ -65,8 +65,9 @@
             this.dgv_MainDataTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_MainDataTable.Location = new System.Drawing.Point(3, 3);
             this.dgv_MainDataTable.Name = "dgv_MainDataTable";
-            this.dgv_MainDataTable.Size = new System.Drawing.Size(585, 444);
+            this.dgv_MainDataTable.Size = new System.Drawing.Size(479, 415);
             this.dgv_MainDataTable.TabIndex = 1;
+            this.dgv_MainDataTable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_MainDataTable_CellDoubleClick);
             // 
             // panel1
             // 
@@ -75,9 +76,9 @@
             this.panel1.Controls.Add(this.btn_sert);
             this.panel1.Controls.Add(this.btn_select);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(594, 3);
+            this.panel1.Location = new System.Drawing.Point(488, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(203, 444);
+            this.panel1.Size = new System.Drawing.Size(203, 415);
             this.panel1.TabIndex = 2;
             // 
             // btn_move
@@ -100,6 +101,7 @@
             // btn_change
             // 
             this.btn_change.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_change.Enabled = false;
             this.btn_change.Font = new System.Drawing.Font("B Badr", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.btn_change.Image = global::win_database.Properties.Resources.database_1_;
             this.btn_change.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -126,6 +128,7 @@
             this.btn_sert.Text = "InsertToThisTable";
             this.btn_sert.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_sert.UseVisualStyleBackColor = false;
+            this.btn_sert.Click += new System.EventHandler(this.Btn_sert_Click);
             this.btn_sert.MouseEnter += new System.EventHandler(this.Btn_move_MouseEnter);
             this.btn_sert.MouseLeave += new System.EventHandler(this.Btn_move_MouseLeave);
             // 
@@ -150,7 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(694, 421);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
             this.Text = "Form1";
