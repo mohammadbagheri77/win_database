@@ -31,8 +31,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_2 = new System.Windows.Forms.Label();
-            this.btn_save = new System.Windows.Forms.Button();
             this.lbl_1 = new System.Windows.Forms.TextBox();
+            this.btn_save = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -55,11 +55,10 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.53658F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.46342F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.36585F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.63415F));
             this.tableLayoutPanel2.Controls.Add(this.lbl_2, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.lbl_1, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
@@ -73,12 +72,20 @@
             this.lbl_2.BackColor = System.Drawing.SystemColors.Control;
             this.lbl_2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbl_2.Location = new System.Drawing.Point(283, 0);
+            this.lbl_2.Location = new System.Drawing.Point(270, 0);
             this.lbl_2.Name = "lbl_2";
-            this.lbl_2.Size = new System.Drawing.Size(124, 59);
+            this.lbl_2.Size = new System.Drawing.Size(137, 59);
             this.lbl_2.TabIndex = 1;
             this.lbl_2.Text = "label2";
             this.lbl_2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lbl_1
+            // 
+            this.lbl_1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_1.Location = new System.Drawing.Point(3, 3);
+            this.lbl_1.Name = "lbl_1";
+            this.lbl_1.Size = new System.Drawing.Size(261, 20);
+            this.lbl_1.TabIndex = 2;
             // 
             // btn_save
             // 
@@ -91,14 +98,6 @@
             this.btn_save.Text = "اضافه کردن";
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.Btn_save_Click);
-            // 
-            // lbl_1
-            // 
-            this.lbl_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_1.Location = new System.Drawing.Point(3, 3);
-            this.lbl_1.Name = "lbl_1";
-            this.lbl_1.Size = new System.Drawing.Size(274, 20);
-            this.lbl_1.TabIndex = 2;
             // 
             // frmUpdat
             // 

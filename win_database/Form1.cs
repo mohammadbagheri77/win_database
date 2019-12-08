@@ -17,7 +17,7 @@ namespace win_database
         {
             InitializeComponent();
         }
-         public string tblName { get; set; }
+        public string tblName { get; set; }
         private void Btn_move_MouseEnter(object sender, EventArgs e)
         {
             ((Button)sender).BackColor = Color.Gray;
@@ -66,13 +66,26 @@ namespace win_database
             int j = e.ColumnIndex;
 
             frmUpdat fr;
-            if (dgv_MainDataTable.Columns[j].HeaderText.ToString().ToLower().Contains("id"))
+            if (j == -1)
+            {
+                fr = new frmUpdat("", "", "", "", true);
+            }
+            else if (dgv_MainDataTable.Columns[j].HeaderText.ToString().ToLower().Contains("id"))
             {
                 fr = new frmUpdat(tblName, dgv_MainDataTable.Columns[j].HeaderText, dgv_MainDataTable.Rows[i].Cells[j].Value.ToString(), $"id={dgv_MainDataTable.Rows[i].Cells[j].Value.ToString()}", true);
             }
             else
             {
-                fr = new frmUpdat(tblName, dgv_MainDataTable.Columns[j].HeaderText, dgv_MainDataTable.Rows[i].Cells[j].Value.ToString(), $" {dgv_MainDataTable.Columns[j].HeaderText} = '{dgv_MainDataTable.Rows[i].Cells[j].Value.ToString()}'", false);
+
+                if (dgv_MainDataTable.Rows[i].Cells[j].Value.ToString().ToLower().Length == 0)
+                {
+                    fr = new frmUpdat("", "", "", "", true);
+                }
+                else
+                {
+                    fr = new frmUpdat(tblName, dgv_MainDataTable.Columns[j].HeaderText, dgv_MainDataTable.Rows[i].Cells[j].Value.ToString(), $" {dgv_MainDataTable.Columns[j].HeaderText} = '{dgv_MainDataTable.Rows[i].Cells[j].Value.ToString()}'", false);
+                }
+
             }
             fr.ShowDialog();
             PDBC dbObj = new PDBC();
